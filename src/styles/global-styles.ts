@@ -1,14 +1,15 @@
 import { createGlobalStyle } from "styled-components";
+import { normalize } from 'styled-normalize'
 
-export interface DefaultTheme {
-  colors: {
-    primary: string;
-    secondary: string
-  };
-}
+export const GlobalStyles = createGlobalStyle`
+  ${normalize}
 
-export const GlobalStyles = createGlobalStyle<{ theme: DefaultTheme }>`
+  a {
+    text-decoration: none;
+  }
+
   body {
-    background: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.white};
+    font-family: 'Montserrat';
   }
 `
